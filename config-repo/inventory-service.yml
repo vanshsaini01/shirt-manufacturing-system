@@ -1,21 +1,12 @@
+server:
+  port: 8888
+
 spring:
   application:
-    name: inventory-service
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/inventorydb
-    username: vanshsaini1
-    password: vansh@
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-server:
-  port: 8082
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/vanshsaini01/shirt-manufacturing-system
+          default-label: main
