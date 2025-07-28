@@ -1,52 +1,42 @@
 package com.shirtms.inventory.controller;
 
+import com.shirtms.inventory.dto.InventoryRequestDTO;
+import com.shirtms.inventory.entity.InventoryItem;
+import com.shirtms.inventory.service.InventoryService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.shirtms.inventory.entity.Inventory;
-import com.shirtms.inventory.service.InventoryService;
-
 @RestController
-@RequestMapping("/inventory")
+@RequestMapping("/api/inventory")
 public class InventoryController {
 
-    private final InventoryService inventoryService;
-
     @Autowired
-    public InventoryController(InventoryService inventoryService) {
-        this.inventoryService = inventoryService;
+    private InventoryService inventoryService;
+
+    @PostMapping("/stock-in")
+    public InventoryItem stockIn(@RequestBody InventoryRequestDTO request) {
+        return inventoryService.stockIn(request);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Inventory> addInventory(@RequestBody Inventory inventory) {
-    Inventory saved = inventoryService.addInventory(inventory);
-        return new ResponseEntity<>(saved, HttpStatus.CREATED);
-}
-
+    @PostMapping("/stock-out")
+    public InventoryItem stockOut(@RequestBody InventoryRequestDTO request) {
+        return inventoryService.stockOut(request);
+    }
 
     @GetMapping("/all")
-    public List<Inventory> getAllInventory() {
+    public List<InventoryItem> getAllInventory() {
         return inventoryService.getAllInventory();
     }
 
-    @GetMapping("/{id}")
-    public Inventory getInventoryById(@PathVariable Long id) {
-        return inventoryService.getInventoryById(id);
+    @GetMapping("/low-stock")
+    public List<InventoryItem> getLowStockItems() {
+        return inventoryService.getLowStockItems();
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String deleteInventory(@PathVariable Long id) {
-        inventoryService.deleteInventory(id);
-        return "Inventory item deleted with id: " + id;
+    @PostMapping("/item")
+    public InventoryItem addInventoryItem(@RequestBody InventoryItem item) {
+        return inventoryService.addInventoryItem(item);
     }
 }

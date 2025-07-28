@@ -1,8 +1,10 @@
 package com.shirtms.inventory.repository;
 
+import com.shirtms.inventory.entity.InventoryItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.shirtms.inventory.entity.Inventory;
+import java.util.Optional;
 
-public interface InventoryRepository extends JpaRepository<Inventory, Long> {
+public interface InventoryRepository extends JpaRepository<InventoryItem, Long> {
+    Optional<InventoryItem> findByItemName(String itemName);
 }

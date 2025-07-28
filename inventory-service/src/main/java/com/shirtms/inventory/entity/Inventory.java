@@ -1,10 +1,6 @@
 package com.shirtms.inventory.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "inventory")
@@ -21,7 +17,8 @@ public class Inventory {
     private String unit;
 
     // Constructors
-    public Inventory() {}
+    public Inventory() {
+    }
 
     public Inventory(Long id, String itemName, int quantity, String unit) {
         this.id = id;
@@ -30,11 +27,10 @@ public class Inventory {
         this.unit = unit;
     }
 
-    // Getters & Setters
+    // Getters and Setters
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -42,7 +38,6 @@ public class Inventory {
     public String getItemName() {
         return itemName;
     }
-
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
@@ -50,7 +45,6 @@ public class Inventory {
     public int getQuantity() {
         return quantity;
     }
-
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -58,7 +52,6 @@ public class Inventory {
     public String getUnit() {
         return unit;
     }
-
     public void setUnit(String unit) {
         this.unit = unit;
     }

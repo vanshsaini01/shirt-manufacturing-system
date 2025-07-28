@@ -1,0 +1,15 @@
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\entity\InventoryItem.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\dto\InventoryRequestDTO.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\dto\InventoryDTO.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\model\Button.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\repository\ButtonRepository.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\controller\InventoryController.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\InventoryServiceApplication.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\service\InventoryServiceImpl.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\entity\StockTransaction.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\model\Fabric.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\service\InventoryService.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\repository\FabricRepository.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\repository\InventoryRepository.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\entity\Inventory.java
+E:\shirt-manufacturing-system\inventory-service\src\main\java\com\shirtms\inventory\repository\StockTransactionRepository.java
