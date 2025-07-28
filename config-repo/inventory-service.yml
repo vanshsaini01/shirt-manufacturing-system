@@ -1,8 +1,20 @@
 spring:
   application:
     name: inventory-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/inventorydb
+    username: vanshsaini1
+    password: vansh@
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 server:
   port: 8082
+
 eureka:
   client:
     service-url:
